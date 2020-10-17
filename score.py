@@ -254,8 +254,8 @@ def myfunc(mid):
             except Exception:
                 raise
 
-    extra_words = ['Wow!!', 'Fabulous!', 'Hitter!', 'Gigantic!', 'Gr8!', '', 'Its Huugee!', 'Nailed!', 'Marvelous!', 'Xcellent!',
-                   'Woahhh', 'Stunner', 'Perfect', 'Unreal!!', "\U0001F618", "\U0001F607", "\U0001F49D", "\U0001F49A",
+    extra_words = ['Wow!!', 'Fabulous!', 'Hitter!', 'Gigantic!', 'Gr8!', '', 'Its Huugee!', 'Nailed!', 'Marvelous!', 'Xcellent!', 'Unbeatable!',
+                   'Aggressive!', 'Crackerrr!!', 'Stunner', 'Unstoppable!!', 'Unreaaaal!!', "\U0001F618", "\U0001F607", "\U0001F49D", "\U0001F49A",
                    "\U0001F4AB"]
     smileys = ["\U0001F973", "\U0001F60E", "\U0001F917", "\U0001F60D", "\U0001F970", "\U0001F929", "\U0001F618",
                "\U0001F607", "\U0001F49D", "\U0001F49A", "\U0001F4AB", "\U0001F44C", "\U0001F91F", "\U0001F44F",
@@ -265,7 +265,7 @@ def myfunc(mid):
 
     count = 0
 
-    while count < 360:
+    while count < 540:
 
         with open('dummy.txt', 'r') as f:
             content = f.read()
@@ -326,11 +326,11 @@ def myfunc(mid):
                     with open('dummy.txt', 'w') as w:
                         w.write(content_to_write)
 
-        time.sleep(30)
+        time.sleep(20)
         count = count + 1
         print("Iteration count: " + str(count))
 
-        if count == 150 or count == 355:
+        if count == 225 or count == 535:
 
             content_to_write = "0 0"
 
