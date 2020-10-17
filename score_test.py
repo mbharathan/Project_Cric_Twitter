@@ -276,7 +276,8 @@ def myfunc(mid):
         scard = c.scorecard(mid)
 
         x = scard['scorecard']
-        
+        print(x)
+        print(total_fours, total_sixes)
 
         for i in x:
 
@@ -295,27 +296,11 @@ def myfunc(mid):
                 if four_diff > 0 or six_diff > 0:
 
                     if four_diff > 0:
-                        api = twitter.Api(consumer_key=os.environ.get('CONSUMER_KEY'),
-                                          consumer_secret=os.environ.get('CONSUMER_SECRET'),
-                                          access_token_key=os.environ.get('ACCESS_TOKEN_KEY'),
-                                          access_token_secret=os.environ.get('ACCESS_TOKEN_SECRET'))
-
-                        status = api.PostUpdate('4/Four! ' + random.choice(smileys) + random.choice(smileys)
-                                                 + random.choice(smileys) + random.choice(extra_words) + '\n'
-                                                + "#PowerplayWithChampions " + "@flipkartvideo")
-                        print("Tweeted as " + status.text)
+                        
                         api = []
 
                     if six_diff > 0:
-                        api = twitter.Api(consumer_key=os.environ.get('CONSUMER_KEY'),
-                                          consumer_secret=os.environ.get('CONSUMER_SECRET'),
-                                          access_token_key=os.environ.get('ACCESS_TOKEN_KEY'),
-                                          access_token_secret=os.environ.get('ACCESS_TOKEN_SECRET'))
-
-                        status = api.PostUpdate('6/Six! '+ random.choice(smileys) + random.choice(smileys)
-                                                 + random.choice(smileys) + random.choice(extra_words) + '\n'
-                                                + "#PowerplayWithChampions " + "@flipkartvideo")
-                        print("Tweeted as " + status.text)
+                        
                         api = []
 
                     total_fours = fours
@@ -326,7 +311,7 @@ def myfunc(mid):
                     with open('dummy.txt', 'w') as w:
                         w.write(content_to_write)
 
-        time.sleep(30)
+        time.sleep(20)
         count = count + 1
         print("Iteration count: " + str(count))
 
@@ -381,19 +366,9 @@ today_val = {
     '02NovemberPM' : '30534',
     '03NovemberPM' : '30539',
     }
-for k,v in today_val.items():
-    if str(midd) == str(k):
-        mid=str(v)
-print(mid)
 
-# mid = '30409'
 
-if curtime == '14:00' or curtime == '14:01' or curtime == '14:02' or curtime == '14:03':
-    myfunc(mid)
-elif curtime == '10:00' or curtime == '10:01' or curtime == '10:02' or curtime == '10:03':
-    if daay == 'Saturday' or daay == 'Sunday':
-        myfunc(mid)
-else:
-    print("Not an scheduled run!!")
+mid = '30409'
 
-# myfunc(mid)
+
+myfunc(mid)
