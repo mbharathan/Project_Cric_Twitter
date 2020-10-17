@@ -1,1 +1,1 @@
-web: gunicorn senthil_andavar.wsgi
+web: python score.py
